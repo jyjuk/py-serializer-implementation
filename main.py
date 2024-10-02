@@ -1,5 +1,4 @@
 import io
-import json
 
 from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
@@ -17,4 +16,3 @@ def deserialize_car_object(json: bytes) -> Car:
     stream = io.BytesIO(json)
     data = JSONParser().parse(stream)
     return Car(**data)
-
